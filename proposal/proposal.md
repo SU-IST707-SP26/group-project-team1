@@ -17,7 +17,17 @@ Our predictive model for 4th down scenarios can be utilized by NFL coaches for d
 
 **Lit Review**
 
+NFL 4th down decision analytical models are built to maximize expected win probability or expected points, lacking the granularity required for a thorough analysis of each unique 4th down situation. Publicly available analytics tools, including those used by broadcast networks, rely on basic variables such as score, distance, yard line, clock, timeouts, pre-game win probability, and relative offense/defense strength to inform 4th down decisions. ESPN’s win probability model incorporates these predictors into its weekly “go/punt/field goal” guidance graphics shown during games (Walder). Recent statistical literature has highlighted the inherent uncertainty in win probability estimates derived from a limited sample of historical games and advocates for uncertainty quantification in future models (Brill, Yurko & Wyner). 
 
+Traditional models based on league averages and basic situation variables may also overlook heterogeneity in conversion success tied to team strength, possessions, and score context (Brill & Wyner). Incorporating additional predictors will be valuable in attempting to build a more robust approach to these 4th down decisions.
+
+Sources:
+- Seth Walder, ESPN analytics model for fourth-down decisions
+  https://www.espn.com/nfl/story/_/id/39379626/nfl-analytics-models-fourth-graphics-method-decisions-punt-field-goal-go-it?
+- Brill, R. S., Yurkko, R., & Wyner, A. J. (2025) — Analytics, Have Some Humility: A Statistical View of Fourth-Down Decision Making
+  https://ryansbrill.com/pdf/statistics_in_sports_papers/Brill_Humility_TAS.pdf
+- Brill, R. S. & Wyner, A. J. (2024) — Fourth-down conversion heterogeneity estimates
+  https://wsb.wharton.upenn.edu/fourth-down-conversion-frequencies-are-higher-than-you-think/
 **Data**
 
 We are going to utilize the nflFastR dataset to accomplish our goals. This publicly available dataset contains information at the play level in a very granular fashion. It contains written descriptions of each play, as well as numerous measurements and characteristics. These include the offensive and defensive formations, players involved in the play, and much more. We also plan on purchasing a subscription to the NFL's All 22 film, which will give us access to videos of every play in our dataset (from multiple angles). This will help validate our feature engineering steps and add dynamic elements to our final paper/presentation. 
