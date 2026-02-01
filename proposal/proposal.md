@@ -1,7 +1,9 @@
-IST 707 Group Project Proposal: 
-Team1
+IST 707 Group Project Proposal: Team1
+
 Fred Gullo, Jared Weber, Gavin Stein
+
 Topic: NFL 4th Down Decision Making // Fixed-Effects Analysis of Dynamic Kickoff Rule Change
+
 Title: Fourth & Context (still working on it, want to pick something catchier)
 
 
