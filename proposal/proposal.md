@@ -43,4 +43,9 @@ We construct a supervised machine learning framework to model 4th down decision 
 To account for structural changes induced by recent NFL kickoff rule modifications, we explicitly model season specific field position dynamics. Variables capturing expected starting field position following kickoffs are interacted with 4th down outcomes, ensuring that the altered risk/reward tradeoff of punts and field goals is reflected in the learning process. We also include season fixed effects and rule era indicators to prevent pooling assumptions that would mask systematic differences between pre- and post-“dynamic kickoff” environments. This design allows the model to adapt as kickoff incentives evolve, rather than relying on historically averaged payoffs that may no longer apply. By integrating rule changes directly into the feature space and validation process, the resulting model provides decision recommendations that are both context aware and robust to ongoing shifts in league policy, making it suitable for real time, coach-facing decision support.
 
 
+**Risks**
+
+Collecting data for coverage looks could prove to be the most difficult aspect of the project. Publicly available data is very sparse for defensive scheme play calls and we may have to resort to manually inputting coverage looks by reviewing the film of select 4th down plays. While tedious, we believe we can build an efficient enough process for the 3 of us to collect this data in a timely manner.
+
+There is also a chance that some 4th down decision variables we try to include, such as encroachment possibility, may be such a rare and/or random occurrence that it doesn’t end up being useful to our analysis. In this case, we would make sure to further refine the robustness of our findings that do carry significance.
 
