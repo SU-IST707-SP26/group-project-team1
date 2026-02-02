@@ -42,6 +42,16 @@ We construct a supervised machine learning framework to model 4th down decision 
 
 To account for structural changes induced by recent NFL kickoff rule modifications, we explicitly model season specific field position dynamics. Variables capturing expected starting field position following kickoffs are interacted with 4th down outcomes, ensuring that the altered risk/reward tradeoff of punts and field goals is reflected in the learning process. We also include season fixed effects and rule era indicators to prevent pooling assumptions that would mask systematic differences between pre- and post-“dynamic kickoff” environments. This design allows the model to adapt as kickoff incentives evolve, rather than relying on historically averaged payoffs that may no longer apply. By integrating rule changes directly into the feature space and validation process, the resulting model provides decision recommendations that are both context aware and robust to ongoing shifts in league policy, making it suitable for real time, coach-facing decision support.
 
+**Project Plan**
+
+| Period     | Activity | Milestone |
+|------------|----------|-----------|
+| Week 4 | Data acquisition and preprocessing: pull nflFastR play-by-play data (2022–2024), compile manual offensive/defensive playcaller dataset, implement data joining pipeline, and clean data for relevant 4th down and kickoff contexts. | Project proposal finalized and submitted. Core datasets acquired, merged, and cleaned for analysis. |
+| Week 5 | Feature engineering and dimensionality reduction: create field position metrics under new kickoff rules, encode categorical variables, perform PCA on game-situation variables, and generate correlation heatmaps for 4th down success factors. | Feature set prepared for modeling. Key variance drivers and relationships identified. Weekly update submitted. |
+| Weeks 6–7 | Clustering analysis of 4th down scenarios: implement K-Means clustering, evaluate optimal number of clusters using Elbow and Silhouette methods, visualize clusters via PCA/t-SNE, and profile distinct scenario types. | Meaningful 4th down scenario clusters defined and interpreted. Weekly updates for Weeks 6 and 7 submitted. |
+| Week 8 | Initial modeling and reporting: train baseline logistic regression model for 4th down success, tune model hyperparameters, analyze dynamic kickoff impacts, and draft methodology and preliminary results sections. | Project midterm report completed and submitted with baseline modeling results and initial findings. |
+
+
 
 **Risks**
 
