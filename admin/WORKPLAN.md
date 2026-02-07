@@ -8,13 +8,13 @@
 
 ⏳ Write script to pull nflFastR play-by-play data for 2022-2024 seasons (JW)
 
-[ ] Create manual dataset of offensive/defensive playcallers per week (FG)
+⏳ Create manual dataset of offensive/defensive playcallers per week (FG)
 
-[ ] Implement data joining pipeline (nflFastR + Playcaller data) (GS)
+⏳ Implement data joining pipeline (nflFastR + Playcaller data) (GS)
 
-[ ] Filter and clean dataset for specific 4th down and kickoff contexts (JW)
+⏳ Filter and clean dataset for specific 4th down and kickoff contexts (JW)
 
-[ ] Submit Project Proposal (All)
+✅ Submit Project Proposal (All)
 
 **Milestone 2:** *Dimensionality Reduction & Feature Engineering (Week 5)*
 
