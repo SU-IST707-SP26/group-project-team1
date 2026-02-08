@@ -20,19 +20,15 @@ The following project management guide explains how we will track and manage our
 ## Why We Do This
 
 * **Keep the team aligned** — Everyone should know the project vision, the current plan, and recent progress at all times.
-* **Document decisions and changes** — Projects always evolve. A clear record of what changed, when, and why prevents confusion and helps with grading.
 * **Support AI-assisted work** — Modern AI tools are powerful, but their memory is limited. Having structured, up-to-date documents gives AI agents the context they need to work effectively with you, even after restarts or when using multiple agents.
 * **Integrate with git** — By keeping planning artifacts in the repository, you can link tasks in the plan directly to your commits, making it easy to correlate planning with execution.
 
 The key is not to have a “perfect” system — it’s to **use a system reliably**.
 
----
 
-## The Two Core Documents
 
 All documents live at the top level of your project repository.
 
-### `VISION.md`
 
 * **Purpose:** Defines the project's "North Star" — what you are trying to accomplish and why.
 * **Stability:** Should remain unchanged unless there's a major pivot.
@@ -57,7 +53,6 @@ The WORKPLAN.md tracks current and upcoming work in a hierarchical task list. It
 - [ ] Future task 2
 
 ### Milestone 2: [Name]
-- [ ] Task
 - [ ] Task
 
 ## Changelog
