@@ -62,4 +62,20 @@ A central objective of the project is to understand decision-making and outcomes
 **Next Steps** (optional):  
 - Merge fourth down dataset with manually collected coaching/playcaller data  
 - Conduct exploratory analysis to identify key drivers of fourth down decisions and success  
-- Integrate engineered features into downstream predictive models  
+- Integrate engineered features into downstream predictive models
+
+  -------------------------------------------------------------------------------------
+
+## 2026-02-08 - [Full Data Join] (GS)
+
+**Context**:  
+Have all of our data in 6 different sets, need to join into a single csv file
+
+**Problem Identified** (if applicable):  
+
+
+**Solution Implemented**:
+- Created pipeline to join all data together including, all 4th downs, coaching impact, and hard count attempts
+
+**Impact**:  
+- Gives us a dataset to build off of for the rest of the project
