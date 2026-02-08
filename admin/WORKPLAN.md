@@ -10,7 +10,7 @@
 
 ✅ Create manual dataset of offensive/defensive playcallers per week (FG)
 
-⏳ Implement data joining pipeline (nflFastR + Playcaller data) (GS)
+✅ Implement data joining pipeline (nflFastR + Playcaller data) (GS)
 
 ⏳ Filter and clean dataset for specific 4th down and kickoff contexts (JW)
 
