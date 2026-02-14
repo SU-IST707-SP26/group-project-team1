@@ -79,3 +79,22 @@ Have all of our data in 6 different sets, need to join into a single csv file
 
 **Impact**:  
 - Gives us a dataset to build off of for the rest of the project
+
+  -------------------------------------------------------------------------------------
+
+## 2026-02-14 - [Drive Field Position Start] (FG)
+
+**Context**: Field position was stored as "BUF 30" previously. Needed to be converted into a format where a model could interpret bigger numbers as being further from scoring. It isn't going to get the fact that the offensive team's abbrev means the team is further from scoring and the defensive team's abbrev is closer to scoring. Now it is universally formated no matter which two teams are matched up
+
+**Problem Identified** (if applicable): Consistent formatting is super important for ML models
+
+**Solution Implemented**:
+- Wrote feature engineering process as a function so it can be universally applied to all of our csv files
+- started a codespace
+- function can be tweaked later on to account for new scenarios/issues
+
+**Impact**: will help us with every step of modeling
+
+**Next Steps** (optional): What should happen next?
+
+-------------------------------------------------------------------------------------
