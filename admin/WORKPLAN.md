@@ -24,7 +24,7 @@ Icon Storage:
 
 *Focus:* Preparing variables for modeling and exploring the feature space.
 
-⏳ Feature engineer "Field Position Start" metrics based on new Kickoff rules (FG)
+✅ Feature engineer "Field Position Start" metrics based on new Kickoff rules (FG)
 
 [ ] Encode categorical variables (formations, teams) for analysis (GS)
 
