@@ -30,7 +30,7 @@ Icon Storage:
 
 [ ] Perform PCA on game-situation variables to identify key variance drivers (JW)
 
-⏳ Generate correlation heatmap for 4th down success factors (FG)
+🚫 Generate correlation heatmap for 4th down success factors (FG)
 
 [ ] Draft and submit Weekly Update (Week 5) (All)
 
