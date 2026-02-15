@@ -98,3 +98,22 @@ Have all of our data in 6 different sets, need to join into a single csv file
 **Next Steps** (optional): What should happen next?
 
 -------------------------------------------------------------------------------------
+
+
+## 2026-02-15 - [Correlation Heatmap] (FG)
+
+**Context**: Observe relationships between predictors/features
+
+**Problem Identified** (if applicable): What issue prompted this work?
+
+**Solution Implemented**:
+- Started by removing unnecessary columns such as play id, game id, play desc, etc
+- Then removed player identifiers like jersey number and name, since this was just trying to uncover numeric relationships
+
+**Impact**: Ran into issues. There are so many predictors to sift through, I think this will be more valuable to complete later on once we've decided exactly what variables we will use to predict success/playcall
+
+**Next Steps** (optional): Reduce dimensions of data
+
+-------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------
