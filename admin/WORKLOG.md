@@ -116,4 +116,18 @@ Have all of our data in 6 different sets, need to join into a single csv file
 
 -------------------------------------------------------------------------------------
 
+## 2026-02-15 - [Encoding Categorical Variables] (GS)
+
+**Context**: Large dataset with many numeric and categorical variables
+
+**Problem Identified** (if applicable): Determining which categorical variables are meaningful and should be encoded versus removed, dealing with data before full dimensionality reduction.
+
+**Solution Implemented**:
+- Wrote an encoding script for future use once full dimensionality reduction happens and meaningful categorical variables are determined
+- Pipelines for ordinal variables to be onehotencoded and others to be label encoded
+  
+**Impact**: While encoding for categorical variables isn't completely finished, it will be easily done through saved script once initial steps are made
+  
+**Next Steps** (optional): Fully Reduce dimensions of data
+
 -------------------------------------------------------------------------------------
