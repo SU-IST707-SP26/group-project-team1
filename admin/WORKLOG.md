@@ -116,6 +116,25 @@ Have all of our data in 6 different sets, need to join into a single csv file
 
 -------------------------------------------------------------------------------------
 
+## 2026-02-15 - [Feature Reduction for Fourth Down Modeling] (JW)
+
+**Context**: The combined dataset contained 372 variables, many of which were irrelevant, redundant, outcome-based, or too sparse to be useful for modeling fourth down decisions. Reducing dimensionality was necessary to focus on pre-snap situational factors and make modeling feasible.
+
+**Problem Identified** (if applicable): High-dimensional data increases computational cost, complicates interpretation, and raises overfitting risk. Numerous variables represented player information, identifiers, post-play outcomes, or contained almost no variation (mostly zeros or missing values).
+
+**Solution Implemented**:
+- Reduced the dataset from 372 variables to 139 variables
+- Removed columns matching patterns associated with outcomes, identifiers, or irrelevant contexts (e.g., probability metrics, EPA/WP, player fields, IDs, kickoff-related variables)
+- Eliminated columns with ≥99% zeros or missing values to remove near-constant predictors
+- Created a reproducible filtering pipeline using pattern-based exclusion and sparsity thresholds
+- Exported lists of removed and retained variables (`removed_variables.txt`, `kept_variables.txt`) for documentation and transparency
+  
+**Impact**: Produces a cleaner, model-ready dataset focused on variables plausibly influencing fourth down decision-making, reduces noise and computational burden, and improves interpretability for downstream analysis and modeling
+  
+**Next Steps** (optional): Validate that key situational variables were retained, perform additional feature selection or dimensionality reduction if needed, and integrate the filtered dataset into the predictive modeling pipeline
+
+-------------------------------------------------------------------------------------
+
 ## 2026-02-15 - [Encoding Categorical Variables] (GS)
 
 **Context**: Large dataset with many numeric and categorical variables
@@ -130,4 +149,5 @@ Have all of our data in 6 different sets, need to join into a single csv file
   
 **Next Steps** (optional): Fully Reduce dimensions of data
 
--------------------------------------------------------------------------------------
+
+
