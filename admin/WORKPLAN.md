@@ -26,7 +26,7 @@ Icon Storage:
 
 ✅ Feature engineer "Field Position Start" metrics based on new Kickoff rules (FG)
 
-[⏳] Encode categorical variables (formations, teams) for analysis (GS)
+✅ Encode categorical variables (formations, teams) for analysis (GS)
 
 [ ] Perform PCA on game-situation variables to identify key variance drivers (JW)
 
