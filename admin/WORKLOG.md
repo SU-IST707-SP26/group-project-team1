@@ -149,5 +149,22 @@ Have all of our data in 6 different sets, need to join into a single csv file
   
 **Next Steps** (optional): Fully Reduce dimensions of data
 
+--------------------------------------------------------------------------------------
+## 2026-02-22 - [Encoding Categorical Variables Continued] (GS)
+
+**Context**: Large dataset with many numeric and categorical variables
+
+**Problem Identified** (if applicable): Determining which categorical variables are meaningful and should be encoded versus removed, dealing with data before full dimensionality reduction. Getting everything to numerical form for PCA purposes, handling data that inherently has many nulls.
+
+**Solution Implemented**:
+- Wrote an encoding script for future use once full dimensionality reduction happens and meaningful categorical variables are determined
+- Pipelines for ordinal variables to be onehotencoded and others to be label encoded
+- Replaced nulls with 0s and removed variables with far too many nulls
+  
+**Impact**: Dataset is prepared for dimensionality reduction.
+  
+**Next Steps** (optional): Fully Reduce dimensions of data
+
+
 
 
