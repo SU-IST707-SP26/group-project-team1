@@ -165,6 +165,36 @@ Have all of our data in 6 different sets, need to join into a single csv file
   
 **Next Steps** (optional): Fully Reduce dimensions of data
 
+-------------------------------------------------------------------------------------
 
+
+## 2026-02-23 - [Revise Dimensionality Reduction] (FG/JW/GS)
+
+**Context**: Why was this work needed?
+- Even after Gavin dropped the unneccessary variables, our data is still super wide
+- Needed to take another look at our method
+  
+**Problem Identified** (if applicable): What issue prompted this work?
+- Concerns about interpretability of results and negative model effects of too many dims
+
+**Solution Implemented**:
+- Determined that we could remove upwards of 100 encoded variables for different identifiers of which team is on offense/defense by engineering a new feature
+- New feature works as so:
+    - There is a variable called 'fumble_return_team' in original data
+    - value is one of the 32 team abbrevs
+    - instead, we'll make 'fumble_returned_by_offense' which will either be 0 or 1
+    - Repeat this process for 5-6 other categorical columns
+    - Add these 5-6 columns to 'columns_to_drop'
+    - Save ourselves 150+ columns (we won't have to encode those 5-6 columns for their 32 possible outcomes)
+
+**Impact**: How does this affect the pipeline/project?
+- Huge dimensionality reduction, Going from 500+ columns to around 350
+
+
+**Next Steps** (optional): What should happen next?
+- implement these changes to the encoding script
+- apply to data
+
+-------------------------------------------------------------------------------------
 
 
