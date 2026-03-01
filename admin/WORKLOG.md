@@ -197,4 +197,23 @@ Have all of our data in 6 different sets, need to join into a single csv file
 
 -------------------------------------------------------------------------------------
 
+## 2026-03-01 - [Principal Component Analysis (PCA) on Encoded Fourth Down Dataset] (JW)
+
+**Context**: Fully encoded numerical dataset (`encoded_fourth_downs.csv`) prepared for dimensionality reduction and downstream modeling.
+
+**Problem Identified** (if applicable): High-dimensional feature space may introduce redundancy, multicollinearity, and noise, potentially degrading model performance and interpretability.
+
+**Solution Implemented**:
+- Loaded the encoded dataset and verified all features were numeric
+- Standardized all variables using z-score normalization to ensure equal scaling
+- Applied Principal Component Analysis (PCA) to identify orthogonal components capturing maximal variance
+- Evaluated explained variance ratios to determine the appropriate number of components
+- Generated reduced-dimensional representation of the dataset for future modeling
+- Examined component loadings to understand variable contributions
+
+**Impact**: Reduced dimensionality while preserving most of the dataset’s information, improving computational efficiency and mitigating multicollinearity. Produced a transformed feature set suitable for clustering, classification, or regression tasks.
+
+**Next Steps** (optional): Integrate PCA-transformed features into model pipelines and compare performance against models using the original feature space.
+
+-------------------------------------------------------------------------------------
 
