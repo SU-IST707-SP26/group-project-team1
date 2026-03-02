@@ -217,3 +217,24 @@ Have all of our data in 6 different sets, need to join into a single csv file
 
 -------------------------------------------------------------------------------------
 
+## 2026-03-02 - [Dimensionality Reduction Function] (FG)
+
+**Context**: Why was this work needed?
+- wanted to reduce the dimensionality of our dataset after encoding
+- there were redundant columns that stored the same information over and over again, or took up space where they weren't needed
+
+**Problem Identified** (if applicable): What issue prompted this work?
+- after encoding, realized we had a very wide dataset
+
+**Solution Implemented**:
+don't need fumble_recovery_team for all 32 teams every single row when fumbles are very rare. Just the posteam (offensive team) column, defensive team column, fumble (0 or 1) column, and fumble_recovery_team_is_posteam (if fum recovered by posteam, 1. if NaN [no fumble] or defensive team then 0)
+
+
+**Impact**: How does this affect the pipeline/project?
+- will remove 5x32 columns from dataset while keeping the same amount of information in there
+
+**Next Steps** (optional): What should happen next?
+- re-run PCA and visualize clusters
+
+-------------------------------------------------------------------------------------
+
