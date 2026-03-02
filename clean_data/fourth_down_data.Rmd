@@ -1,0 +1,97 @@
+---
+title: "Fourth_Downs"
+author: "Jared Weber"
+date: "2026-02-08"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(nflfastR)
+```
+
+```{r}
+pbp_all <- load_pbp(2018:2025)
+```
+
+```{r}
+penalties <- pbp_all %>%
+  filter(penalty == 1) %>%
+  select(contains("penalty"), ep, epa, desc, play_type, play_clock, everything())
+
+fourth_downs <- pbp_all %>% 
+  filter(down == 4)
+```
+
+```{r}
+jumps <- penalties %>%
+  filter(penalty_type %in% c("Defensive Offside", "Encroachment", "Neutral Zone Infraction"))
+
+jumps_4d <- penalties %>%
+  filter(penalty_type %in% c("Defensive Offside", "Encroachment", "Neutral Zone Infraction")) %>% 
+  filter(down == 4 & ydstogo <= 5)
+
+jumps_4d_off <- penalties %>%
+  filter(penalty_type %in% c("Defensive Offside", "Encroachment", "Neutral Zone Infraction")) %>% 
+  filter(down == 4 & ydstogo <= 5) %>% 
+  filter(!str_detect(desc, regex("Punt|Field Goal", ignore_case = TRUE)))
+
+jumps_fail_delays <- penalties %>% 
+  filter(penalty_type == "Delay of Game" & down == 4 & ydstogo <= 5) %>% 
+  filter(!str_detect(desc, regex("Punt|Field Goal", ignore_case = TRUE)))
+
+jumps_fail_to <- pbp_all %>%
+  mutate(flag = timeout == 1 & lead(down) == 4) %>%
+  filter(flag | lag(flag)) %>%
+  select(-flag)
+
+jumps_fail_to <- pbp_all %>%
+  filter(timeout == 1 & lead(down) == 4 & lead(ydstogo) <= 5)
+```
+
+```{r}
+hard_count_attempts <- rbind(jumps_4d_off, jumps_fail_delays, jumps_fail_to)
+
+write_csv(hard_count_attempts, "hard_count_attempts.csv")
+write_csv(fourth_downs, "fourth_downs.csv")
+```
+
+```{r}
+fourth_downs18_19 <- fourth_downs %>% 
+  filter(season %in% c(2018, 2019))
+
+fourth_downs20_21 <- fourth_downs %>% 
+  filter(season %in% c(2020, 2021))
+
+fourth_downs22_23 <- fourth_downs %>% 
+  filter(season %in% c(2022, 2023))
+
+fourth_downs24_25 <- fourth_downs %>% 
+  filter(season %in% c(2024, 2025))
+
+write_csv(fourth_downs18_19, "fourth_downs_2018_2019.csv")
+write_csv(fourth_downs20_21, "fourth_downs_2020_2021.csv")
+write_csv(fourth_downs22_23, "fourth_downs_2022_2023.csv")
+write_csv(fourth_downs24_25, "fourth_downs_2024_2025.csv")
+```
+
+```{r}
+patterns <- c("prob", "epa", "wp", "first", "third", "number", "id", "player", "tackle", "kickoff")
+
+fourth_downs_filtered <- fourth_downs %>%
+  select(-contains(patterns)) %>% 
+  select(where(~ mean(. %in% c(0, NA), na.rm = FALSE) < 0.99))
+```
+
+```{r}
+removed_vars <- setdiff(names(fourth_downs), names(fourth_downs_filtered))
+kept_vars    <- intersect(names(fourth_downs), names(fourth_downs_filtered))
+
+writeLines(removed_vars, "removed_variables.txt")
+writeLines(kept_vars, "kept_variables.txt")
+```
+

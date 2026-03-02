@@ -24,13 +24,13 @@ Icon Storage:
 
 *Focus:* Preparing variables for modeling and exploring the feature space.
 
-⏳ Feature engineer "Field Position Start" metrics based on new Kickoff rules (FG)
+✅ Feature engineer "Field Position Start" metrics based on new Kickoff rules (FG)
 
-[ ] Encode categorical variables (formations, teams) for analysis (GS)
+✅ Encode categorical variables (formations, teams) for analysis (GS)
 
 [ ] Perform PCA on game-situation variables to identify key variance drivers (JW)
 
-[ ] Generate correlation heatmap for 4th down success factors (FG)
+🚫 Generate correlation heatmap for 4th down success factors (FG)
 
 [ ] Draft and submit Weekly Update (Week 5) (All)
 
