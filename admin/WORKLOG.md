@@ -238,3 +238,22 @@ don't need fumble_recovery_team for all 32 teams every single row when fumbles a
 
 -------------------------------------------------------------------------------------
 
+## 2026-03-02 - [Update Encoding Process] (FG)
+
+**Context**: Why was this work needed?
+- needed to update encoding process and add more columns to the drop process
+
+**Problem Identified** (if applicable): What issue prompted this work?
+- identified more columns we could drop to reduce dimensions
+- needed to apply encoding update identified last week
+
+**Solution Implemented**:
+- added new function to condense team info columns from 32 into 1
+
+**Impact**: How does this affect the pipeline/project?
+- reduced encoded dataframes column count from 515 to less than 400
+
+**Next Steps** (optional): What should happen next?
+
+-------------------------------------------------------------------------------------
+
