@@ -1,0 +1,35 @@
+Mid-Semester Report
+Fourth Down Decision-Making & Coaching Tendencies in the NFL
+Team Members: Fred Gullo, Jared Weber, Gavin Stein
+
+1. Project Overview
+This project investigates fourth down decision-making in the NFL, with a focus on understanding how situational context, field position, and coaching tendencies interact to influence play calls and outcomes. A secondary thread examines the impact of the 2024 dynamic kickoff rule change on special teams behavior. The ultimate goal is to build predictive models capable of classifying fourth down decisions and evaluating their success, while attributing patterns to specific coaching staffs across seasons.
+
+2. Progress Summary
+Milestone 1 — Data Acquisition & Pre-processing ✅ Complete
+All Milestone 1 objectives were completed on schedule.
+Play-by-play data for the 2022–2024 NFL seasons was pulled using nflfastR, then filtered to isolate true fourth down attempts. This required careful exclusion of no-plays, dead-ball penalties, and other stoppages that appear on fourth down in the raw data but do not represent genuine decision points. Key situational variables — distance to go, field position, score differential, time remaining, and quarter — were engineered as foundational features for downstream modeling.
+Because no centralized data source exists for offensive and defensive playcallers at the weekly level, this dataset was constructed manually. A Gemini instance was trained to gather and format the information, and results were validated through targeted manual spot-checks. This produced playcallers_by_week.xlsx, which enables year-over-year and week-by-week coaching analysis, including in-season coordinator changes.
+All data sources were joined into a single unified CSV via a dedicated pipeline, establishing the base dataset for the remainder of the project.
+
+Milestone 2 — Dimensionality Reduction & Feature Engineering 🔄 In Progress
+Milestone 2 work has been substantially completed, with PCA finalized and the correlation heatmap deprioritized pending further variable selection.
+Field Position Engineering (FG): Raw field position strings (e.g., "BUF 30") were converted into a universal numeric format where higher values consistently represent proximity to the opponent's end zone, regardless of which team is on offense. This was implemented as a reusable function applicable across all project CSVs.
+Categorical Encoding (GS): An encoding pipeline was developed for the full dataset. Ordinal variables were one-hot encoded and others label encoded. Null values were replaced with zeros, and columns with an excessive proportion of missing values were dropped. The pipeline was written to be modular, allowing straightforward updates as variable selection continues to evolve.
+Dimensionality Reduction (FG/JW/GS): The raw combined dataset contained 372 variables. A key insight during this phase was that several categorical columns (e.g., fumble_recovery_team) stored team-level information that, after encoding, would expand to 32 binary columns per variable. These were replaced with single binary features — for example, fumble_recovered_by_posteam — reducing the encoded column count from 515 to under 400 while preserving all meaningful information. A reproducible filtering pipeline was built with pattern-based exclusion and sparsity thresholds (≥99% zeros/nulls), and removed/kept variable lists were exported for documentation.
+PCA (JW): Principal Component Analysis was applied to the encoded dataset after z-score normalization. Explained variance ratios were evaluated to determine the appropriate number of components, and component loadings were examined to assess variable contributions. The PCA-transformed feature set is ready for integration into clustering and modeling pipelines.
+Correlation Heatmap (FG): Initial work began on a correlation heatmap, but given the breadth of the feature space at the time, the visualization was not interpretable enough to be actionable. This will be revisited once the variable set is finalized for modeling.
+
+Milestones 3 & 4 — Clustering & Modeling ⏳ Upcoming
+These milestones are scheduled for Weeks 6–8 and have not yet begun.
+
+3. Key Technical Decisions
+Team-variable collapsing: The decision to replace multi-team categorical columns with binary "possession-relative" flags was the single largest dimensionality win of the project. It eliminated the need to encode 5–6 columns across 32 possible team values, saving 150+ columns without any information loss.
+Modular pipeline design: Both the field position engineering and encoding functions were written as reusable, parameterized functions rather than one-off scripts. This ensures that any new data (e.g., an updated season pull or a subset filtered for a specific analysis) can be processed consistently.
+Gemini-assisted data collection: Manual playcaller data collection was accelerated significantly by prompting a Gemini instance to gather and format the information, then validating output through random spot-checks. This was preferable to writing a scraper given the inconsistency of sources across team websites, beat reporter coverage, and league announcements.
+
+4. Challenges Encountered
+
+Dataset width: After joining all data sources and encoding categoricals, the feature space expanded far beyond initial expectations (500+ columns). Multiple iterative passes of reduction were required, and this work carried into Week 7.
+Null handling: Several variables in the nflfastR schema are inherently sparse (e.g., fumble- and penalty-related fields), requiring deliberate decisions about imputation versus dropping rather than a blanket strategy.
+Correlation heatmap timing: Attempting the heatmap prior to finalizing variable selection produced results too dense to interpret. This was recognized early and the task was deferred appropriately.
