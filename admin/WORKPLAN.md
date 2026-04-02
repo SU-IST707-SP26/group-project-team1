@@ -80,11 +80,14 @@ Milestone 6: Analysis, Coaching Insights & Visualization (Weeks 13–14)
 
 [ ] Film validation — select plays (All)
 
-
 Milestone 7: Paper, Presentation & Delivery (Weeks 14–15)
+
 [ ] Write methodology & results sections (All)
+
 [ ] Build presentation deck (FG)
+
 [ ] Internal review & dry run (All)
+
 [ ] Perform hyperparameter tuning on baseline models (GS)
 
 ✅ Finalize and submit Project Midterm Report (All)
