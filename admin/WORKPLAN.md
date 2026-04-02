@@ -56,8 +56,24 @@ Icon Storage:
 
 ✅ Train baseline Logistic Regression model for 4th down success (JW)
 
-[ ] Perform hyperparameter tuning on baseline models (GS)
+Milestone 5: Advanced Modeling & Validation (Weeks 12–13)
+Focus: Dual-model build & kickoff rule integration
+✅ Train baseline Logistic Regression model for 4th down success (JW)
+[ ] Descriptive model: predict coach's call (JW)
+[ ] Prescriptive model: expected points framework (FG)
+[ ] Kickoff rule fixed-effects analysis (GS)
+[ ] Cross-validation & calibration (All)
 
-✅ Write "Methodology" and "Preliminary Results" sections for report (All)
+Milestone 6: Analysis, Coaching Insights & Visualization (Weeks 13–14)
+[ ] Coach tendency profiling (FG)
+[ ] Cluster analysis of 4th down scenarios (GS)
+[ ] Decision dashboard / visualization (JW)
+[ ] Film validation — select plays (All)
+
+Milestone 7: Paper, Presentation & Delivery (Weeks 14–15)
+[ ] Write methodology & results sections (All)
+[ ] Build presentation deck (FG)
+[ ] Internal review & dry run (All)
+[ ] Perform hyperparameter tuning on baseline models (GS)
 
 ✅ Finalize and submit Project Midterm Report (All)
