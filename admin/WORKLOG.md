@@ -256,4 +256,25 @@ don't need fumble_recovery_team for all 32 teams every single row when fumbles a
 **Next Steps** (optional): What should happen next?
 
 -------------------------------------------------------------------------------------
+## 2026-04-04 - [Develop EPA Prescriptive Model] (FG)
+
+**Context**: Why was this work needed?
+- bringing together data work and creating much more complex modeling structures is very important for end goals
+
+**Problem Identified** (if applicable): What issue prompted this work?
+
+**Solution Implemented**:
+- created three simple-ish models that predict the EPA of 4th downs
+- decide what the optimal decision to be made is
+- calculate cost (in EPA) over time of going against the models recommendations
+
+**Impact**: How does this affect the pipeline/project?
+- gives us actionable results and now we know where we have to tweak the model
+
+**Next Steps** (optional): What should happen next?
+- improve improve improve
+- investigate why the model is so aggressive (so much "go for it")
+- build sister model for predicting what WILL happen
+- combine models
+-------------------------------------------------------------------------------------
 
