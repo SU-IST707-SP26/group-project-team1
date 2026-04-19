@@ -278,3 +278,19 @@ don't need fumble_recovery_team for all 32 teams every single row when fumbles a
 - combine models
 -------------------------------------------------------------------------------------
 
+-------------------------------------------------------------------------------------
+## 2026-04-12 - [Improve EPA Prescriptive Model] (FG)
+
+**Context**: Why was this work needed?
+- working on the over-aggressive nature of the model
+
+**Problem Identified** (if applicable): What issue prompted this work?
+- too aggressive in suggestions
+**Solution Implemented**:
+- built hyperparameter tuners for the three models
+- Modified data filtering process
+
+**Impact**: How does this affect the pipeline/project?
+- higher quality results that make more sense
+- still some work to do
+-------------------------------------------------------------------------------------
