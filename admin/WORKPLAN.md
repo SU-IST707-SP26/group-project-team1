@@ -44,8 +44,6 @@ Icon Storage:
 
 ✅ Visualize clusters (t-SNE or PCA projection) to interpret "Scenario Types" (FG)
 
-[ ] Profile each cluster (e.g., "Desperate 4th & Long" vs "Aggressive Mid-field") (GS)
-
 ✅ Draft and submit Weekly Update (Week 6) (All)
 
 ✅ Draft and submit Weekly Update (Week 7) (All)
@@ -66,7 +64,7 @@ Focus: Dual-model build & kickoff rule integration
 
 [ ] Prescriptive model: expected points framework (FG)
 
-[ ] Kickoff rule fixed-effects analysis (GS)
+🚫 Kickoff rule fixed-effects analysis (GS)
 
 [ ] Cross-validation & calibration (All)
 
@@ -84,10 +82,10 @@ Milestone 7: Paper, Presentation & Delivery (Weeks 14–15)
 
 [ ] Write methodology & results sections (All)
 
-[ ] Build presentation deck (FG)
+✅ Build presentation deck (GS)
 
 [ ] Internal review & dry run (All)
 
-[ ] Perform hyperparameter tuning on baseline models (GS)
+[ ] Perform hyperparameter tuning on baseline models (All)
 
 ✅ Finalize and submit Project Midterm Report (All)
