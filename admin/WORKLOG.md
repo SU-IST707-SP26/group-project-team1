@@ -294,3 +294,15 @@ don't need fumble_recovery_team for all 32 teams every single row when fumbles a
 - higher quality results that make more sense
 - still some work to do
 -------------------------------------------------------------------------------------
+## 2026-04-25 - [Build Presentation] (GS)
+
+**Context**: Why was this work needed?
+- Brought together all work from semester to create rough draft presentation slide deck
+
+**Problem Identified** (if applicable): Presenting in next class
+
+**Solution Implemented**:
+- Built slide deck
+
+**Next Steps** (optional): What should happen next?
+- Recieve feedback from group and update/improve as needed.
