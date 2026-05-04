@@ -163,3 +163,7 @@ cython_debug/
 
 # Mac OS
 .DS_Store
+
+fourth_and_context/data/*.csv.gz
+fourth_and_context/models_cache/
+__pycache__/
