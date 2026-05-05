@@ -306,3 +306,6 @@ don't need fumble_recovery_team for all 32 teams every single row when fumbles a
 
 **Next Steps** (optional): What should happen next?
 - Recieve feedback from group and update/improve as needed.
+
+## 2026-05-5 - [Build Dashboard] (GS)
+Built dashboard, instructions to run and line of bash to paste in terminal are in the README.md in fourth_and_context folder
