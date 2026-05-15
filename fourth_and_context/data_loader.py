@@ -190,7 +190,8 @@ def make_situation_row(features: list[str],
                        qtr: int, game_secs: int, half_secs: int,
                        pos_to: int, def_to: int,
                        goal_to_go: bool, shotgun: bool, no_huddle: bool,
-                       home: bool, season: int = 2024) -> pd.DataFrame:
+                       home: bool, season: int = 2024,
+                       playcaller: str | None = None) -> pd.DataFrame:
     """Build a single-row feature DataFrame for prediction.
 
     Uses league-average pregame EPA values as defaults — these are
@@ -222,4 +223,11 @@ def make_situation_row(features: list[str],
     season_key = f"season_{season}"
     if season_key in base:
         base[season_key] = 1
+    # Set the playcaller one-hot. If unknown/None, leave all playcaller_*
+    # columns at 0 — model behavior in that case is undefined and the UI
+    # should warn the user.
+    if playcaller:
+        pc_key = f"playcaller_{playcaller}"
+        if pc_key in base:
+            base[pc_key] = 1
     return pd.DataFrame([base])

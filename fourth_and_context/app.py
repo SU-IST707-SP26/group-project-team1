@@ -168,6 +168,11 @@ app_ui = ui.page_fluid(
                     ui.input_checkbox("home",       "Possession = home",   True),
                     ui.input_select("season", "Season",
                                     SEASON_CHOICES, selected="2024"),
+                    ui.input_select("playcaller",                                               # NEW
+                                    "Playcaller",                                               # NEW
+                                    choices={"Andy Reid": "Andy Reid"},  # populated reactively # NEW
+                                    selected="Andy Reid",                                       # NEW
+                                    ),   
                     ui.hr(),
                     ui.input_checkbox("compare_eras",
                                       "Compare across kickoff eras",
@@ -237,6 +242,21 @@ def server(input, output, session):
     @reactive.calc
     def state():
         return load_everything()
+    @reactive.effect                                                # NEW
+    def _populate_playcaller_dropdown():                            # NEW
+        s = state()                                                 # NEW
+        if not s.get("ready"):                                      # NEW
+            return                                                  # NEW
+        pc_names = sorted(                                          # NEW
+            c.replace("playcaller_", "")                            # NEW
+            for c in s["playcaller_cols"]                           # NEW
+        )                                                           # NEW
+        default = "Andy Reid" if "Andy Reid" in pc_names else (     # NEW
+            pc_names[0] if pc_names else None                       # NEW
+        )                                                           # NEW
+        ui.update_select(                                           # NEW
+            "playcaller", choices=pc_names, selected=default        # NEW
+        )                                                           # NEW
 
     def _situation_kwargs(season_override: int | None = None) -> dict:
         gs = input.game_secs()
