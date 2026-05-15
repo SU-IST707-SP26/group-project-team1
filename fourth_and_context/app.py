@@ -269,6 +269,7 @@ def server(input, output, session):
             no_huddle=input.no_huddle(), home=input.home(),
             season=season_override if season_override is not None
                                     else int(input.season()),
+            playcaller=input.playcaller(),
         )
 
     @reactive.calc
